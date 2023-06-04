@@ -44,14 +44,11 @@ def index():
 
 @app.route('/details')
 def details():
-    # Retrieve the output value from the array based on the index
+    
     index = request.args.get('index')
     abstract = request.args.get('abstract')
     updated = request.args.get('updated')
     url = request.args.get('url')
-
-    # Pass the output value to a new template or perform any desired action
-    #render_template('output.html', abstract=abstract,updated=updated,url=url)
     return f"Abstract: {abstract}<br>Last updated: {updated}<br>Url to Article: {url}"
 
 if __name__ == '__main__':

@@ -8,9 +8,22 @@ table, th, td {
   border:1px solid black;
   text-align : center;
 }
+th{
+background-color: #04AA6D;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+h1{
+  text-align : center;  
+}
 </style>
 <body>
-    <table id="myTable">
+    <h1>List of Articles</h1>
+	<br>
+	<br>
+    <table class="center">
         <thead>
             <tr>
                 <th>Article Name</th>
@@ -24,7 +37,5 @@ table, th, td {
             {% endfor %}
         </tbody>
     </table>
-
-    
 </body>
 </html>

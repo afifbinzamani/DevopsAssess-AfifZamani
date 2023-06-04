@@ -6,10 +6,6 @@ from flask import Flask, render_template, jsonify, request
 
 apikey = "NAzhAKbEBS7c1rLBGsArGFo7Gw3Oyp3D"
 
-# Top Stories:
-# https://developer.nytimes.com/docs/top-stories-product/1/overview
-section = "science"
-# query_url = f"https://api.nytimes.com/svc/topstories/v2/{section}.json?api-key={apikey}"
 query_url = f"http://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/7.json?api-key={apikey}"
 
 r = requests.get(query_url)
@@ -19,7 +15,7 @@ data = r.json()
 num = len(data["results"])
 
 x = 0
-#namearr = ["a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a"]
+
 namearr = [None] * num
 abstractarr = [None] * num
 updatedarr = [None] * num
@@ -32,15 +28,6 @@ while x < num:
   urlarr[x] = (data["results"][x]["url"])
   
   x = x + 1
-
-"""
-i = 0
-
-
-while i < num:
-  print(namearr[i])
-  i += 1
-"""
 
 webbrowser.open("http://localhost:5000/")
 
@@ -70,13 +57,7 @@ def details():
 if __name__ == '__main__':
     app.run()
     
-"""
-<div id="name" data-value= {{name}}></div>
 
-<script>
-  var name = document.getElementById('name');
-  var attributeValue = name.getAttribute('data-value');
-"""    
 
 
 

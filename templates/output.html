@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Variable to JavaScript Loop Table</title>
+</head>
+<style>
+table, th, td {
+  border:1px solid black;
+  text-align : center;
+}
+</style>
+<body>
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>Abstract</th>
+				<th>Updated</th>
+				<th>Url</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for index in range(updated|length) %}
+            <tr>
+			    <td>{{ abstract }}</a></td>
+                <td>{{ updated }}</a></td>
+				<td>{{ url }}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+/*
+        var name = {{ name|tojson }};
+        var table = document.getElementById("myTable");
+
+        for (var i = 0; i < name.length; i++) {
+            var row = table.insertRow();
+            var cell = row.insertCell();
+            cell.innerHTML = name[i];
+        }
+*/
+    </script>
+</body>
+</html>
